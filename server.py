@@ -1,3 +1,26 @@
+class HttpServer:
+    
+    # MIME type mapping for static file serving
+    MIME_TYPES = {
+        '.html': 'text/html',
+        '.css': 'text/css',
+        '.js': 'application/javascript',
+        '.json': 'application/json',
+        '.png': 'image/png',
+        '.jpg': 'image/jpeg',
+        '.jpeg': 'image/jpeg',
+        '.gif': 'image/gif',
+        '.svg': 'image/svg+xml',
+        '.ico': 'image/x-icon',
+        '.txt': 'text/plain',
+        '.pdf': 'application/pdf',
+    }
+    def __init__(self,host,port,keep_alive_timeout=15,static_dir=None):
+        self.host= host
+        self.port= port
+        self.server_socket= None
+        self.running= False
+    
 if __name__ == "__main__":
     import argparse
     
